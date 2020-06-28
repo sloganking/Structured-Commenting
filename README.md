@@ -18,16 +18,44 @@ To indicate that a comment is describing multiple lines.
 string alice = "Hello "
 string bob = "World!"
 
-//this comment describes the next 4 lines
+//this comment describes the next 3 lines
     int a = 2
     int b = 3
-    //this comment only talks about the line directly below it
     int c = a + b
 
 int foo = bar
 ```
 
 ## Usage
+
+An example of both comment types in use together
+```c++
+//graphics controller
+    for(uint8_t i = 0; i < 9; i++){
+
+        //where do you want to write data
+        graphicsControllerIndexPort.Write(i);
+
+        //what do you want to write there
+        graphicsControllerDataPort.Write(*(registers++));
+    }
+
+//attributeController
+    for(uint8_t i = 0; i < 21; i++){
+
+        //must reset attributeController before sending data
+        attributeControllerResetPort.Read();
+
+        //where do you want to write data
+        attributeControllerIndexPort.Write(i);
+
+        //what do you want to write there
+        attributeControllerWritePort.Write(*(registers++));
+    }
+    attributeControllerResetPort.Read();
+    attributeControllerIndexPort.Write(0x20);
+```
+
 Nesting comments talking about multiplel lines. Each instance of ``...`` would be replaced by the appropriate code segment.
 ```c++
 //make pizza
@@ -68,34 +96,6 @@ Nesting comments talking about multiplel lines. Each instance of ``...`` would b
                 ...
             //rotate pizza 12.5 degrees
                 ...
-```
-
-An example of both comment types in use together
-```c++
-//graphics controller
-    for(uint8_t i = 0; i < 9; i++){
-
-        //where do you want to write data
-        graphicsControllerIndexPort.Write(i);
-
-        //what do you want to write there
-        graphicsControllerDataPort.Write(*(registers++));
-    }
-
-//attributeController
-    for(uint8_t i = 0; i < 21; i++){
-
-        //must reset attributeController before sending data
-        attributeControllerResetPort.Read();
-
-        //where do you want to write data
-        attributeControllerIndexPort.Write(i);
-
-        //what do you want to write there
-        attributeControllerWritePort.Write(*(registers++));
-    }
-    attributeControllerResetPort.Read();
-    attributeControllerIndexPort.Write(0x20);
 ```
 
 ## Benefits
