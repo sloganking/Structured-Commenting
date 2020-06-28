@@ -15,6 +15,9 @@ int bar = 1
 
 To indicate that a comment is describing multiple lines.
 ```c++
+string alice = "Hello "
+string bob = "World!"
+
 //this comment describes the next 4 lines
     int a = 2
     int b = 3
