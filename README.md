@@ -99,8 +99,22 @@ Nesting comments talking about multiplel lines. Each instance of ``...`` would b
 ```
 
 ## Benefits
-- readability
-- code folding
+- increased readability
+- comment based [code folding](https://en.wikipedia.org/wiki/Code_folding)
 - Is or can be made compatable with code formatters
 ## Downsides
 - Does not easilly work with structurally encorced languages (such as python)
+- Whitespace enforced languages (such as python) may require the programmer to insert additional lines of code (``if True:`` statements) to support this repo's multi-line commenting scheme
+
+```python
+# initialize
+if True:
+    from compress import textCompressor
+    compressor = textCompressor()
+
+# tests
+if True:
+    testCompression()
+    testDecompression()
+    print("Everything passed")
+```
