@@ -99,12 +99,13 @@ Nesting comments talking about multiplel lines. Each instance of ``...`` would b
 ```
 
 ## Benefits
-- increased readability
-- comment based [code folding](https://en.wikipedia.org/wiki/Code_folding)
+- Increased readability
+- No ambiguity about what lines of code a comment is refering to
+- Comment based [code folding](https://en.wikipedia.org/wiki/Code_folding)
 - Is or can be made compatable with code formatters
-## Downsides
-- Does not easilly work with structurally encorced languages (such as python)
-- Whitespace enforced languages (such as python) may require the programmer to insert additional lines of code (``if True:`` statements) to support this repo's multi-line commenting scheme
+
+## Notice
+- Whitespace enforced languages (such as python) may require the programmer to insert additional lines of code (``if True:`` statements) to support this repo's multi-line commenting scheme.
 
 ```python
 # initialize
@@ -118,3 +119,5 @@ if True:
     testDecompression()
     print("Everything passed")
 ```
+
+- Code formatters (such as [prettier](https://prettier.io/) may change the whitespace depth of code lines inside in multi-line comments. Putting an ``if True:`` statement after each multi-line comment will fix this.
