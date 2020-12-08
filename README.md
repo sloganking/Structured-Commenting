@@ -120,4 +120,4 @@ if True:
     print("Everything passed")
 ```
 
-- Code formatters (such as [prettier](https://prettier.io/) may change the whitespace depth of code lines inside in multi-line comments. Putting an ``if True:`` statement after each multi-line comment will fix this.
+- Code formatters (such as [prettier](https://prettier.io/)) may change the whitespace depth of code lines inside in multi-line comments. Putting an ``if True:`` statement after each multi-line comment will fix this.
