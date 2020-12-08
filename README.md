@@ -121,3 +121,25 @@ if True:
 ```
 
 - Code formatters (such as [prettier](https://prettier.io/)) may change the whitespace depth of code lines inside in multi-line comments. Putting an ``if True:`` statement after each multi-line comment will fix this.
+
+- It is acceptable to use the multi-line comment scheme to talk about single lines of code. This can sometimes make dense code more readable, and avoid the need to insert empty whitespace between code lines. Choosing whether to do this is a matter of taste.
+
+Visually clear:
+```c++
+#Declare first variable
+    int foo = 0
+#Declare second variable
+    int bar = 1
+#Add variables together
+    int buzz = foo + bar
+```
+
+Visually convoluted:
+```c++
+#Declare first variable
+int foo = 0
+#Declare second variable
+int bar = 1
+#Add variables together
+int buzz = foo + bar
+```
