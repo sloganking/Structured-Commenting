@@ -204,3 +204,13 @@ Compact and clear:
 ### Where did the name ``structured comment`` come from?
 
 The name **structured comments** is a homage to [Structured_programming](https://en.wikipedia.org/wiki/Structured_programming)
+
+> a programming paradigm aimed at improving the clarity, quality, and development time of a computer program by making extensive use of the structured control flow constructs of selection (if/then/else) and repetition (while and for), block structures, and subroutines. 
+
+Among other things, structured programming popularized code block structures and code block indentation. However comments seemingly never recieved the same upgrade. This is what structured commenging aims to fix.
+
+I thought about going with the name ``block comments`` or ``nested comments`` (which could have made for some cool cover art of a bird tending to it's children in a nest. With  ``//>`` being birds, and ``>`` being their beak), but those names seem to be already being used in some places.
+
+### What about the argument that comments should be uses as little as possible?
+
+Some programmers attest that comments cannot be trusted because they may be incorrect, or the code that they were describing may have changed. Thus the best solution is to just make your code as understandable as possible without comments, and to use comments only where understanding without comments is not possible. While this is not a view I share, I'm not here to tell you when to write comments. If you don't need to write a comment, then don't. If you do, well structured comments are another tool in your toolbox with the potential to make your comments even better :).
