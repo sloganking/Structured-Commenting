@@ -199,4 +199,8 @@ Compact and clear:
 #<
 ```
 
+# FAQ
 
+### Where did the name ``structured comment`` come from?
+
+The name **structured comments** is a homage to [Structured_programming](https://en.wikipedia.org/wiki/Structured_programming)
