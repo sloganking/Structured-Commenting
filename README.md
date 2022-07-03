@@ -234,3 +234,4 @@ It's up to you, but I'd personally use structured comments for short sections. A
 Seemingly yes, there is already existing demand for comments that describe explicite sections of code.
 
 - https://github.com/hyperledger/sawtooth-sdk-rust/blob/46e610008790a03b194b5baa24adb80243757366/src/consensus/service.rs#L23-L65
+- https://github.com/munificent/craftinginterpreters/issues/1049 (slightly different usecase but still interesting)
