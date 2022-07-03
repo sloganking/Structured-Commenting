@@ -144,8 +144,9 @@ Nesting comments talking about multiplel lines. Each instance of ``...`` would b
 ## Benefits
 - Increased readability
 - No ambiguity about what lines of code a comment is refering to
-- Comment based [code folding](https://en.wikipedia.org/wiki/Code_folding)
+- Because structured comments are indented, some IDEs will allow structured comment based [code folding](https://en.wikipedia.org/wiki/Code_folding)
 - Is or can be made compatable with code formatters
+- You can keep using your code formatter of choice, without waiting for them to add structured comment support, thanks to [scfmt](https://github.com/sloganking/scfmt)
 
 ## Notice
 - Whitespace enforced languages (such as python) may require the programmer to insert additional lines of code (``if True:`` statements) to support this repo's multi-line commenting scheme.
@@ -163,21 +164,21 @@ if True:
     print("Everything passed")
 ```
 
-- Code formatters (such as [prettier](https://prettier.io/)) may change the whitespace depth of code lines inside in multi-line comments. Putting an ``if True:`` statement after each multi-line comment will fix this.
+- It is acceptable to use structured comments to talk about single lines of code. This can make dense code more readable, and avoid the need to insert empty whitespace between code lines. Choosing whether to do this is a matter of taste.
 
-- It is acceptable to use the multi-line comment scheme to talk about single lines of code. This can make dense code more readable, and avoid the need to insert empty whitespace between code lines. Choosing whether to do this is a matter of taste.
-
-Visually clear:
+clear but uncompact:
 ```c++
 #Declare first variable
-    int foo = 0
+int foo = 0
+
 #Declare second variable
-    int bar = 1
+int bar = 1
+
 #Add variables together
-    int buzz = foo + bar
+int buzz = foo + bar
 ```
 
-Visually convoluted:
+Compact but hard to read:
 ```c++
 #Declare first variable
 int foo = 0
@@ -186,3 +187,16 @@ int bar = 1
 #Add variables together
 int buzz = foo + bar
 ```
+
+Compact and clear:
+```c++
+#> Declare first variable
+    int foo = 0
+#<> Declare second variable
+    int bar = 1
+#<> Add variables together
+    int buzz = foo + bar
+#<
+```
+
+
