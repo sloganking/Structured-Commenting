@@ -214,3 +214,7 @@ I thought about going with the name ``block comments`` or ``nested comments`` (w
 ### What about the argument that comments should be uses as little as possible?
 
 Some programmers attest that comments cannot be trusted because they may be incorrect, or the code that they were describing may have changed. Thus the best solution is to just make your code as understandable as possible without comments, and to use comments only where understanding without comments is not possible. While this is not a view I share, I'm not here to tell you when to write comments. If you don't need to write a comment, then don't. If you do, well structured comments are another tool in your toolbox with the potential to make your comments even better :).
+
+### Does this change how normal comments work?
+
+No. traditonal single line comments will mean what they always have. Whether that's a slightly ambiguous explanation of then next line(s?), commenting out code you're not using currently, or whatever else they were originally intended for. This means that you can slowly add structured comments to your existing code base without changing the meaning or interpretation of existing comments.
