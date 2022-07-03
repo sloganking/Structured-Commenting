@@ -218,3 +218,13 @@ Some programmers attest that comments cannot be trusted because they may be inco
 ### Does this change how normal comments work?
 
 No. traditonal single line comments will mean what they always have. Whether that's a slightly ambiguous explanation of then next line(s?), commenting out code you're not using currently, or whatever else they were originally intended for. This means that you can slowly add structured comments to your existing code base without changing the meaning or interpretation of existing comments.
+
+### When to use structured comments vs functions?
+
+Choosing between a structured comment and a funciton, for non repeating code, is a matter of taste. My personal recomendation is to use structured comments for short (50 or less) lines of code, and functions for anything longer.
+
+Wrapping some code in a structured comment is easy and fast, but you can forget you're inside a structured comment if they are too large.
+
+The problem with functions is that attempting to turn a large section of code into a function may mean you need 8+ paramaters which you have to write twice, once as paramaters and once as arguments. Which takes a while and is a bit ugly in the end. 
+
+It's up to you, but I'd personally use structured comments for short sections. As you don't have to deal with a scope change, paramater defining, argument passing, and return values, that comes with defining a function.
