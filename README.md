@@ -69,7 +69,7 @@ int foo = bar
 
 Both styles work. Bracketless structured comments are a little easier to write. However Bracketed strucuted comments are more forgiving in that tools such as [scfmt](https://github.com/sloganking/scfmt) can recover their correct indentation if it is acidentally messed up. It is for this reason that I personally reccomend using bracketed structured comments instead of bracketless. However you're free to choose what works for you.
 
-## Usage
+## Examples
 
 An example of both comment types in use together
 ```c++
@@ -97,48 +97,6 @@ An example of both comment types in use together
     }
     attributeControllerResetPort.Read();
     attributeControllerIndexPort.Write(0x20);
-```
-
-Nesting comments talking about multiplel lines. Each instance of ``...`` would be replaced by the appropriate code segment.
-```c++
-//make pizza
-    //walk to kitchen
-        //face twords kitchen
-            ...
-        //steppy step step
-            ...
-    //shape dough into circle
-        ...
-    //add sauce
-        //grab ladle
-            ...
-        //dunk ladle in sauce
-            ...
-        //place ladle over pizza
-            ...
-        //tilt ladle back 90 degrees
-            ...
-    //add cheese
-        //pick up cheese
-            ...
-        //sprinkle cheese over pizza
-            ...
-    //bake
-        //pick up pizza
-            ...
-        //walk to oven
-            ...
-        //place in oven
-            ...
-    //cut
-        //grab pizza cutter
-            ...
-        //loop x4
-            ...
-            //cut pizza vertically
-                ...
-            //rotate pizza 12.5 degrees
-                ...
 ```
 
 ## Benefits
@@ -203,7 +161,7 @@ Compact and clear:
 
 ### Where did the name ``structured comment`` come from?
 
-The name **structured comments** is a homage to [Structured_programming](https://en.wikipedia.org/wiki/Structured_programming)
+The name of **structured comments** is a homage to [Structured_programming](https://en.wikipedia.org/wiki/Structured_programming)
 
 > a programming paradigm aimed at improving the clarity, quality, and development time of a computer program by making extensive use of the structured control flow constructs of selection (if/then/else) and repetition (while and for), block structures, and subroutines. 
 
@@ -231,7 +189,7 @@ It's up to you, but I'd personally use structured comments for short sections. A
 
 ### Is there really demand for this, or is this a solution looking for a problem?
 
-Seemingly yes, there is already existing demand for comments that describe explicite sections of code.
+Seemingly yes, there is already existing demand for comments that describe explicit sections of code.
 
 - Hyperledger Sawtooth: https://github.com/hyperledger/sawtooth-sdk-rust/blob/46e610008790a03b194b5baa24adb80243757366/src/consensus/service.rs#L23-L65
 - Linux Kernel: https://github.com/torvalds/linux/blob/20855e4cb361adeabce3665f5174b09b4a6ebfe6/fs/xfs/libxfs/xfs_attr.h#L45
