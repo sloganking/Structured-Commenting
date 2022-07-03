@@ -1,30 +1,73 @@
 # Structured Commenting
- A specification of my structured commenting scheme
+This ReadMe outlines the specification for structured commenting.
 
-Most existing commenting techniques work adiquatly when notating a few code lines but become unclear or in need of interpretation when used on large structured code segments. To signify that a comment is talking about multiple lines of code, most programmers typically block multiple lines of code under that comment without spacing between them, or leave their comment right before structural code block such as a function or loop in order to describe that structure as a whole. But what if you need to describe both a structure and it's sub components, and what if those sub components have sub components of their own? This is where this structured commenting scheme can help.
+**Note:** A basic formatter that can enable code formatter support for structured commenting in your language, can be [found here](https://github.com/sloganking/scfmt). 
 
-## Two types of comments
-To indicate that a comment is only describing the line directly below it, 
+Most existing commenting techniques work adiquatly when notating a few code lines but become unclear or in need of interpretation when used on large structured code segments. To signify that a comment is talking about multiple lines of code, most programmers typically block multiple lines of code under that comment without spacing between them, or leave their comment right before structural code block such as a function or loop in order to describe that structure as a whole. But what if you need to describe both a structure and it's sub components, and what if those sub components have sub components of their own? This is where structured commenting can help.
 
-```c++
-#This comment only talks about the line directly below it
-int foo = 0
+## Two styles of structured comments
 
-int bar = 1
-```
+Structured comments are special comments that use indendation to explicitly state which lines they are describing. There are two styles of structured comments that you can use for your project. ``bracketless`` and ``bracketed``.
 
-To indicate that a comment is describing multiple lines.
+### Bracketless
+
+bracketless strucutred comments, use indentation alone to describe which lines they are refering to. This means creating a bracketless structured comment is as easy as writing a comment, and then indenting the lines under it that you want the comment to describe. The downside to this approach is that if a colleage or a code formatter changes indentation in a way that unintentionally modifies a bracketless structured comment, it becomes very difficult to figure out what indentation was intended before. 
+
 ```c++
 string alice = "Hello "
 string bob = "World!"
 
-//this comment describes the next 3 lines
+// this is a bracketless structured comment that describes the next 4 lines
     int a = 2
     int b = 3
+    // add the two together (notice how this comment is part of what's being described by the structured comment above)
     int c = a + b
 
 int foo = bar
 ```
+
+### Bracketed
+
+Bracketed strucuted comments use ``>`` and ``<`` characters at the beginning of single line comments, to indicate that they are a bracketed strcutured comment, and explicitly state what kind of bracketed strucuted comment they are, (opening, closing, both). These are akin to oppening and closing brackets ``{``, ``}`` used to indicate the start and end of some structure in many programming languages. Only they indicate the start and end of what a structured comment is describing, instead. You can think of ``>`` as an arrow saying "the lines below me are one indendation level deeper (to the right) than the lines above me. and ``<`` stating the opposite.
+
+```c++
+string alice = "Hello "
+string bob = "World!"
+
+//> this is a bracketed structured comment that describes the next 4 lines
+    int a = 2
+    int b = 3
+    // add the two together (notice how this comment is part of what's being described by the structured comment above)
+    int c = a + b
+//<
+
+int foo = bar
+```
+
+``<>`` can be used as short hand for closing an existing and opening a new structured comment, on the same line. For example
+
+```c++
+string alice = "Hello "
+string bob = "World!"
+
+//> this is a bracketed structured comment that describes the next 4 lines
+    int a = 2
+    int b = 3
+    // add the two together (notice how this comment is part of what's being described by the structured comment above)
+    int c = a + b
+
+//<> this is a bracketed structured comment that describes the next 3 lines
+    int d = 2
+    int e = 3
+    int f = d + e
+//<
+
+int foo = bar
+```
+
+### Which style should I use? 
+
+Both styles work. Bracketless structured comments are a little easier to write. However Bracketed strucuted comments are more forgiving in that tools such as [scfmt](https://github.com/sloganking/scfmt) can recover their correct indentation if it is acidentally messed up. It is for this reason that I personally reccomend using bracketed structured comments instead of bracketless. However you're free to choose what works for you.
 
 ## Usage
 
