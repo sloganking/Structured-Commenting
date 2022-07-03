@@ -229,8 +229,8 @@ The problem with functions is that attempting to turn a large section of code in
 
 It's up to you, but I'd personally use structured comments for short sections. As you don't have to deal with a scope change, paramater defining, argument passing, and return values, that comes with defining a function.
 
-### Is there really demand for comments that talk about explicit sections of code?
+### Is there really demand for this, or is this a solution looking for a problem?
 
-Seemingly yes.
+Seemingly yes, there is already existing demand for comments that describe explicite sections of code.
 
 - https://github.com/hyperledger/sawtooth-sdk-rust/blob/46e610008790a03b194b5baa24adb80243757366/src/consensus/service.rs#L23-L65
