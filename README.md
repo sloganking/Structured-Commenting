@@ -228,3 +228,9 @@ Wrapping some code in a structured comment is easy and fast, but you can forget 
 The problem with functions is that attempting to turn a large section of code into a function may mean you need 8+ paramaters which you have to write twice, once as paramaters and once as arguments. Which takes a while and is a bit ugly in the end. 
 
 It's up to you, but I'd personally use structured comments for short sections. As you don't have to deal with a scope change, paramater defining, argument passing, and return values, that comes with defining a function.
+
+### Is there really demand for comments that talk about explicit sections of code?
+
+Seemingly yes.
+
+- https://github.com/hyperledger/sawtooth-sdk-rust/blob/46e610008790a03b194b5baa24adb80243757366/src/consensus/service.rs#L23-L65
