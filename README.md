@@ -193,7 +193,9 @@ Seemingly yes, there is already existing demand for comments that describe expli
 
 - Hyperledger Sawtooth: https://github.com/hyperledger/sawtooth-sdk-rust/blob/46e610008790a03b194b5baa24adb80243757366/src/consensus/service.rs#L23-L65
 - Linux Kernel: https://github.com/torvalds/linux/blob/20855e4cb361adeabce3665f5174b09b4a6ebfe6/fs/xfs/libxfs/xfs_attr.h#L45
-- Crafing Interpreters: https://github.com/munificent/craftinginterpreters/issues/1049 (slightly different usecase but still interesting)
+- Crafing Interpreters (slightly different usecase but still interesting):
+    - https://github.com/munificent/craftinginterpreters/blob/01e6f5b8f3e5dfa65674c2f9cf4700d73ab41cf8/c/chunk.c#L5
+    - https://github.com/munificent/craftinginterpreters/issues/1049
 - intellij/android regions https://stackoverflow.com/a/26872292/9671390
 - line seperators https://stackoverflow.com/a/2379350/9671390
 - Astro8-Computer https://github.com/sam-astro/Astro8-Computer/blob/0c5b1bc1f998ccc856bc99476546e427847b3bae/example_armstrong_programs/pong.arm#L4
