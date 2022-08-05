@@ -71,9 +71,9 @@ Both styles work. Bracketless structured comments are a little easier to write. 
 
 ## Examples
 
-An example of both comment types in use together
+Structured comments with code and traditional comments inside them.
 ```c++
-//graphics controller
+//> graphics controller
     for(uint8_t i = 0; i < 9; i++){
 
         //where do you want to write data
@@ -83,7 +83,7 @@ An example of both comment types in use together
         graphicsControllerDataPort.Write(*(registers++));
     }
 
-//attributeController
+//<> attributeController
     for(uint8_t i = 0; i < 21; i++){
 
         //must reset attributeController before sending data
@@ -97,6 +97,7 @@ An example of both comment types in use together
     }
     attributeControllerResetPort.Read();
     attributeControllerIndexPort.Write(0x20);
+//<
 ```
 
 ## Benefits
