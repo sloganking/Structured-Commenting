@@ -99,6 +99,52 @@ Structured comments with code and traditional comments inside them.
     attributeControllerIndexPort.Write(0x20);
 //<
 ```
+Nesting structured comments inside one another
+
+```rust
+// remove comment notation if it exists
+let (is_a_comment, space_after_comment_starter, line_no_comment_starter) =
+    remove_comment_notation_if_it_exists(line_no_leading_spaces, comment_starter);
+
+//> apply whitespace depth
+    if is_a_comment & line_no_comment_starter.starts_with('>') {
+        formatted_lines.push(line.to_string() + "\n");
+
+        //> add comment to comment tracker
+            let comment = CommentDetail {
+                line: i,
+                depth: leading_spaces.unwrap(),
+            };
+            comment_tracker.push(comment);
+        //<
+    } else if is_a_comment & line_no_comment_starter.starts_with("<>") {
+        ...
+    }
+//<
+```
+
+Commenting out sections of your code for debuging, while still preserving obvious notation of what that code does.
+
+```rust
+let converted = add_brackets(&contents, extenstion)?;
+
+//> write file
+    // // leave file alone if there was no change
+    // if converted != contents {
+    //     let mut output = match File::create(file) {
+    //         Ok(x) => x,
+    //         Err(_) => return Err(ScfmtErr::CantCreatFile),
+    //     };
+
+    //     match write!(output, "{}", converted) {
+    //         Ok(x) => x,
+    //         Err(_) => return Err(ScfmtErr::CantWriteToFile),
+    //     };
+    // }
+//<
+
+Ok(())
+```
 
 ## Benefits
 - Increased readability
